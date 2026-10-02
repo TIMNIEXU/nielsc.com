@@ -27,20 +27,118 @@
     ],
     "contactTitle": "联系我们",
     "rights": "© 2026 Niel Supply Chain LLC. 版权所有。",
-    "since": "Trade Further Together"
+    "since": "Trade Further Together",
+    "groupEyebrow": "NIEL Group 成员",
+    "groupNote": "六个品牌，一张连通的贸易网络。",
+    "operatedBy": "本网站由 Niel Supply Chain LLC 运营。",
+    "entityNote": "各项服务由 NIEL Group 旗下各运营公司分别提供。"
   },
   "home": {
     "hero": {
-      "eyebrow": "Niel Supply Chain LLC",
-      "titleA": "您的供应链",
-      "titleB": "优势。",
-      "sub": "国际货运、拖车运输、仓储履约与一站式物流服务——100+ 自营卡车、自有车架，以及一支 24/7 随时响应的团队。",
-      "ctaQuote": "获取报价",
-      "ctaServices": "浏览服务",
+      "eyebrow": "NIEL GROUP",
+      "titleA": "全球贸易。",
+      "titleB": "一张连通的网络。",
+      "sub": "报关、货运、拖车、仓储、保险与 AI——通过一个供应链平台连通。",
+      "ctaNeeds": "从您的需求开始",
+      "ctaGroup": "了解集团",
       "trust": [
         "24/7 调度 — 001-732-338-8098",
-        "APICS CSCP 认证的供应链管理",
-        "覆盖全美的服务网络"
+        "APICS CSCP 认证管理团队",
+        "全美覆盖"
+      ]
+    },
+    "router": {
+      "kicker": "从这里开始",
+      "title": "我需要……",
+      "sub": "告诉我们您的需求，我们会把它送到对的团队——您不需要知道该找哪家公司。",
+      "needs": [
+        {
+          "label": "报关清关",
+          "via": "Niel Customs"
+        },
+        {
+          "label": "拖柜运输",
+          "via": "JOMA Logistics"
+        },
+        {
+          "label": "国际货运",
+          "via": "Niel Supply Chain"
+        },
+        {
+          "label": "仓储存放",
+          "via": "Niel Supply Chain"
+        },
+        {
+          "label": "购买海关保证金",
+          "via": "Niel Insurance"
+        },
+        {
+          "label": "购买货运保险",
+          "via": "Niel Insurance"
+        },
+        {
+          "label": "查询关税税率",
+          "via": "NIEL COS"
+        },
+        {
+          "label": "查反倾销反补贴风险",
+          "via": "NIEL COS"
+        },
+        {
+          "label": "追踪我的货物",
+          "via": "JOMA Logistics"
+        },
+        {
+          "label": "管理我的供应链",
+          "via": "NIEL COS"
+        }
+      ]
+    },
+    "flow": {
+      "kicker": "运作方式",
+      "title": "一个需求，自动分流。",
+      "sub": "只买一个环节，或买整条供应链。每个需求都会成为一个供应链案件——拆分到对的团队，在同一个平台里统一。",
+      "steps": [
+        {
+          "title": "告诉我们您的需求",
+          "desc": "一张表单、一个电话，或一条消息。不需要先选公司。"
+        },
+        {
+          "title": "我们分流每个环节",
+          "desc": "报关交给 Niel Customs，拖车交给 JOMA Logistics，保险交给 Niel Insurance。"
+        },
+        {
+          "title": "一个连通的案件",
+          "desc": "所有环节在 NIEL COS 里保持关联——一票货、一个视图、一个团队在背后。"
+        }
+      ],
+      "note": "例如：“海运我自己订了，只需要报关 + 拖车。”→ 一个案件，两个环节，零混乱。"
+    },
+    "group": {
+      "kicker": "Niel Group",
+      "title": "一个集团，每一扇贸易之门。",
+      "sub": "六个入口，一套体系。从哪里进都合适——您始终在 NIEL Group 里面。",
+      "brands": [
+        {
+          "name": "Niel Supply Chain",
+          "desc": "集团旗舰。一站式供应链服务与询价。"
+        },
+        {
+          "name": "Niel Customs",
+          "desc": "AI 驱动的报关行与贸易合规。"
+        },
+        {
+          "name": "JOMA Logistics",
+          "desc": "自 2008 年的拖车、卡车与仓储运营。"
+        },
+        {
+          "name": "Niel Insurance",
+          "desc": "货运保险与海关保证金。"
+        },
+        {
+          "name": "NIEL COS",
+          "desc": "集团背后的 AI 贸易操作系统。"
+        }
       ]
     },
     "ticker": [
@@ -51,81 +149,6 @@
       "一站式物流服务",
       "24/7 调度"
     ],
-    "services": {
-      "kicker": "我们的服务",
-      "title": "五项服务，一个负责到底的伙伴。",
-      "sub": "从单个集装箱到完整供应链方案——任选一项服务，或把整条线路交给我们。",
-      "cardCta": "了解更多",
-      "cards": [
-        {
-          "title": "国际货运",
-          "desc": "海运与空运，门到门协调、单证处理与清关衔接。",
-          "img": "/images/services/svc-oceanair.jpg"
-        },
-        {
-          "title": "拖车运输",
-          "desc": "100+ 自营卡车与自有车架的港口拖柜——包括重箱与超重箱。",
-          "img": "/images/services/svc-trucking.jpg"
-        },
-        {
-          "title": "仓储与履约",
-          "desc": "洛杉矶、萨凡纳、芝加哥、新泽西仓库的安全仓储、中转与履约。",
-          "img": "/images/services/svc-warehouse.jpg"
-        },
-        {
-          "title": "全球供应链",
-          "desc": "海陆空铁多式联运规划——一个方案，一个对接人。",
-          "img": "/images/services/svc-specialized.jpg"
-        },
-        {
-          "title": "一站式物流服务",
-          "desc": "从工厂到最终交付的一份合同——货运、清关、拖柜、仓储全包。",
-          "img": "/images/services/svc-fba.jpg"
-        }
-      ]
-    },
-    "network": {
-      "kicker": "我们的网络",
-      "title": "从海岸到海岸，从港口到门口。",
-      "sub": "三大枢纽区域支撑我们的网络——并以全美卡车运输与全球货运伙伴向外延伸。",
-      "cta": "查看服务网络",
-      "hubs": [
-        {
-          "name": "芝加哥，伊利诺伊州",
-          "desc": "美国中部铁路与多式联运枢纽——连接中西部货主与各海岸。"
-        },
-        {
-          "name": "纽约 / 新泽西",
-          "desc": "纽约/新泽西港拖柜与仓储——距码头仅咫尺之遥。"
-        },
-        {
-          "name": "洛杉矶，加州",
-          "desc": "洛杉矶/长滩港拖柜、中转与仓储，服务亚美航线。"
-        }
-      ]
-    },
-    "why": {
-      "kicker": "为什么选择 Niel",
-      "title": "为承载您的业务而生。",
-      "points": [
-        {
-          "title": "自营车队",
-          "desc": "100+ 自营卡车与自有车架——我们拥有运力，而不只是撮合运力。"
-        },
-        {
-          "title": "单一对接人",
-          "desc": "从报价到交付，一个团队负责到底。不推诿、不扯皮。"
-        },
-        {
-          "title": "NIEL COS 智能驱动",
-          "desc": "每一票货都运行在 NIEL COS——我们的 AI 全球贸易操作系统上，实时追踪、智能单证。"
-        },
-        {
-          "title": "24/7 真人响应",
-          "desc": "全天候调度与支持——001-732-338-8098，接电话的是懂您货的人。"
-        }
-      ]
-    },
     "cosBand": {
       "kicker": "科技",
       "title": "由 NIEL COS™ 驱动",
@@ -133,9 +156,9 @@
       "cta": "了解 NIEL COS"
     },
     "ctaBand": {
-      "kicker": "开始合作",
-      "title": "让我们运送您的货物。",
-      "sub": "告诉我们您的线路——真人回复真实报价。",
+      "kicker": "开始吧",
+      "title": "开始您的供应链案件。",
+      "sub": "告诉我们您的需求——真人回复。",
       "ctaQuote": "获取报价",
       "ctaCall": "致电 001-732-338-8098"
     }

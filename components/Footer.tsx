@@ -1,7 +1,9 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import Logo from "./Logo";
-import { PhoneIcon, MailIcon, PinIcon } from "./icons";
+import { ExternalIcon, PhoneIcon, MailIcon, PinIcon } from "./icons";
+
+const UTM = "utm_source=nielsc.com&utm_medium=group_footer";
 
 export default async function Footer() {
   const t = await getTranslations("footer");
@@ -14,8 +16,50 @@ export default async function Footer() {
     { href: "/contact", label: nav("contact") },
   ];
 
+  const groupBrands = [
+    { name: "Niel Supply Chain", href: "/", external: false },
+    { name: "Niel Customs", href: `https://www.nielcustoms.ai?${UTM}`, external: true },
+    { name: "JOMA Logistics", href: `https://www.jomaus.com?${UTM}`, external: true },
+    { name: "Niel Insurance", href: `https://nielinsurance.com?${UTM}`, external: true },
+    { name: "NIEL COS", href: `https://www.nielcos.ai?${UTM}`, external: true },
+  ];
+
   return (
     <footer className="bg-abyss text-white">
+      {/* NIEL GROUP standard strip — identical on every group site */}
+      <div className="border-b border-white/10">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-gold">
+            {t("groupEyebrow")}
+          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-x-7 gap-y-3">
+            {groupBrands.map((b) =>
+              b.external ? (
+                <a
+                  key={b.name}
+                  href={b.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[15px] font-bold text-white transition-colors hover:text-gold"
+                >
+                  {b.name}
+                  <ExternalIcon className="h-3.5 w-3.5 opacity-60" />
+                </a>
+              ) : (
+                <Link
+                  key={b.name}
+                  href={b.href}
+                  className="text-[15px] font-bold text-white transition-colors hover:text-gold"
+                >
+                  {b.name}
+                </Link>
+              )
+            )}
+          </div>
+          <p className="mt-3 text-[12.5px] text-white/50">{t("groupNote")}</p>
+        </div>
+      </div>
+
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="inline-block rounded-lg bg-white px-3 py-2">
@@ -101,6 +145,11 @@ export default async function Footer() {
           <p>{t("rights")}</p>
           <p className="font-semibold uppercase tracking-[0.2em]">
             {t("since")}
+          </p>
+        </div>
+        <div className="mx-auto max-w-7xl px-4 pb-6 sm:px-6">
+          <p className="text-center text-[11.5px] leading-relaxed text-white/40 sm:text-left">
+            {t("operatedBy")} {t("entityNote")}
           </p>
         </div>
       </div>

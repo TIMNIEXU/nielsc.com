@@ -1,36 +1,65 @@
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import SectionHead from "@/components/SectionHead";
 import Ticker from "@/components/Ticker";
 import Reveal from "@/components/Reveal";
 import {
-  ArrowRightIcon, CheckIcon, ExternalIcon, GlobeIcon,
-  PhoneIcon, PinIcon, TruckIcon,
+  ArrowRightIcon, BoxIcon, BuildingIcon, CheckIcon, ExternalIcon,
+  FileCheckIcon, GlobeIcon, NetworkIcon, PhoneIcon, PinIcon,
+  ShieldCheckIcon, ShipIcon, TruckIcon, WarehouseIcon,
 } from "@/components/icons";
 
 type Props = { params: Promise<{ locale: string }> };
+
+const UTM = "utm_source=nielsc.com&utm_medium=group_router";
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "home" });
+  const cosL = locale === "zh-CN" ? "zh-CN" : "en";
 
   const hero = {
     eyebrow: t("hero.eyebrow"),
     titleA: t("hero.titleA"), titleB: t("hero.titleB"),
-    sub: t("hero.sub"), ctaQuote: t("hero.ctaQuote"), ctaServices: t("hero.ctaServices"),
+    sub: t("hero.sub"),
+    ctaNeeds: t("hero.ctaNeeds"), ctaGroup: t("hero.ctaGroup"),
   };
   const trust = t.raw("hero.trust") as string[];
   const ticker = t.raw("ticker") as string[];
-  const cards = t.raw("services.cards") as { title: string; desc: string; img: string }[];
-  const hubs = t.raw("network.hubs") as { name: string; desc: string }[];
-  const points = t.raw("why.points") as { title: string; desc: string }[];
-  const whyIcons = [TruckIcon, CheckIcon, GlobeIcon, PhoneIcon];
+  const needs = t.raw("router.needs") as { label: string; via: string }[];
+  const steps = t.raw("flow.steps") as { title: string; desc: string }[];
+  const brands = t.raw("group.brands") as { name: string; desc: string }[];
+
+  const needIcons = [
+    FileCheckIcon, TruckIcon, ShipIcon, WarehouseIcon, ShieldCheckIcon,
+    BoxIcon, GlobeIcon, CheckIcon, PinIcon, NetworkIcon,
+  ];
+  const needLinks: { href: string; external: boolean }[] = [
+    { href: `https://www.nielcustoms.ai?${UTM}`, external: true },
+    { href: `https://www.jomaus.com/${locale}/quote?${UTM}`, external: true },
+    { href: "/services", external: false },
+    { href: "/services", external: false },
+    { href: `https://nielinsurance.com/${locale}/bonds?${UTM}`, external: true },
+    { href: `https://nielinsurance.com/${locale}?${UTM}`, external: true },
+    { href: `https://www.nielcos.ai/${cosL}/landed-cost?${UTM}`, external: true },
+    { href: `https://www.nielcos.ai/${cosL}/ad-cvd-checker?${UTM}`, external: true },
+    { href: `https://www.jomaus.com/${locale}/tracking?${UTM}`, external: true },
+    { href: `https://www.nielcos.ai/${cosL}/app?${UTM}`, external: true },
+  ];
+
+  const brandIcons = [BuildingIcon, FileCheckIcon, TruckIcon, ShieldCheckIcon, NetworkIcon];
+  const brandLinks: { href: string; external: boolean }[] = [
+    { href: "/", external: false },
+    { href: `https://www.nielcustoms.ai?${UTM}`, external: true },
+    { href: `https://www.jomaus.com/${locale}?${UTM}`, external: true },
+    { href: `https://nielinsurance.com/${locale}?${UTM}`, external: true },
+    { href: `https://www.nielcos.ai/${cosL}?${UTM}`, external: true },
+  ];
 
   return (
     <>
-      {/* HERO */}
+      {/* HERO — the group, not a forwarder pitch */}
       <section className="meridian-bg relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 sm:pt-24">
           <Reveal>
@@ -44,19 +73,19 @@ export default async function HomePage({ params }: Props) {
               {hero.sub}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/contact"
+              <a
+                href="#needs"
                 className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-[15px] font-bold text-abyss transition-colors hover:bg-gold-deep hover:text-white"
               >
-                {hero.ctaQuote}
+                {hero.ctaNeeds}
                 <ArrowRightIcon className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/services"
+              </a>
+              <a
+                href="#group"
                 className="inline-flex items-center gap-2 rounded-full border border-paper/30 px-7 py-3.5 text-[15px] font-bold text-paper transition-colors hover:border-gold hover:text-gold"
               >
-                {hero.ctaServices}
-              </Link>
+                {hero.ctaGroup}
+              </a>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
               {trust.map((s) => (
@@ -72,106 +101,105 @@ export default async function HomePage({ params }: Props) {
 
       <Ticker items={ticker} />
 
-      {/* SERVICES */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      {/* I NEED TO… — route by need, not by company */}
+      <section id="needs" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-20 sm:px-6">
         <SectionHead
-          kicker={t("services.kicker")}
-          title={t("services.title")}
-          sub={t("services.sub")}
+          kicker={t("router.kicker")}
+          title={t("router.title")}
+          sub={t("router.sub")}
         />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map((c, i) => (
-            <Reveal key={c.title} delay={(i % 3) * 80}>
-              <Link href="/services" className="card card-hover group block h-full overflow-hidden">
-                <div className="relative h-44 w-full overflow-hidden">
-                  <Image
-                    src={c.img}
-                    alt={c.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {needs.map((n, i) => {
+            const Icon = needIcons[i % needIcons.length];
+            const link = needLinks[i];
+            const inner = (
+              <>
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-gold-tint transition-colors group-hover:bg-gold">
+                  <Icon className="h-5 w-5 text-gold-deep transition-colors group-hover:text-abyss" />
+                </span>
+                <span className="display mt-4 text-[17px] leading-snug text-ink">
+                  {n.label}
+                </span>
+                <span className="mt-1.5 inline-flex items-center gap-1 text-[12.5px] font-semibold text-muted">
+                  via {n.via}
+                  {link.external
+                    ? <ExternalIcon className="h-3 w-3" />
+                    : <ArrowRightIcon className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />}
+                </span>
+              </>
+            );
+            const cls =
+              "card card-hover group flex h-full flex-col p-5 text-left";
+            return (
+              <Reveal key={n.label} delay={(i % 5) * 60}>
+                {link.external ? (
+                  <a href={link.href} target="_blank" rel="noreferrer" className={cls}>{inner}</a>
+                ) : (
+                  <Link href={link.href} className={cls}>{inner}</Link>
+                )}
+              </Reveal>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ONE CASE, ROUTED FOR YOU */}
+      <section className="border-y border-line bg-cream/60">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+          <SectionHead kicker={t("flow.kicker")} title={t("flow.title")} sub={t("flow.sub")} />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {steps.map((s, i) => (
+              <Reveal key={s.title} delay={i * 80}>
+                <div className="h-full rounded-2xl bg-paper p-7">
+                  <span className="display text-4xl text-gold">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="display mt-4 text-xl text-ink">{s.title}</h3>
+                  <p className="mt-2 text-[14px] leading-relaxed text-muted">{s.desc}</p>
                 </div>
-                <div className="p-6">
-                  <h3 className="display text-2xl text-ink">{c.title}</h3>
-                  <p className="mt-2 text-[14.5px] leading-relaxed text-muted">{c.desc}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-[14px] font-bold text-gold-deep">
-                    {t("services.cardCta")}
-                    <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-          {/* 6th tile: CTA */}
-          <Reveal delay={160}>
-            <Link
-              href="/contact"
-              className="card card-hover flex h-full min-h-[280px] flex-col items-start justify-center border-navy bg-navy p-6"
-            >
-              <p className="eyebrow eyebrow-light">{t("ctaBand.kicker")}</p>
-              <h3 className="display mt-3 text-3xl text-paper">{t("ctaBand.title")}</h3>
-              <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-[14.5px] font-bold text-abyss">
-                {t("ctaBand.ctaQuote")}
-                <ArrowRightIcon className="h-4 w-4" />
-              </span>
-            </Link>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-8">
+            <p className="mx-auto max-w-3xl rounded-2xl border border-gold/40 bg-gold-tint px-6 py-4 text-center text-[14.5px] leading-relaxed text-ink">
+              {t("flow.note")}
+            </p>
           </Reveal>
         </div>
       </section>
 
-      <div className="route-dots mx-auto max-w-7xl" aria-hidden="true" />
-
-      {/* NETWORK */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      {/* THE GROUP — every trade door */}
+      <section id="group" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-20 sm:px-6">
         <SectionHead
-          kicker={t("network.kicker")}
-          title={t("network.title")}
-          sub={t("network.sub")}
+          kicker={t("group.kicker")}
+          title={t("group.title")}
+          sub={t("group.sub")}
         />
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {hubs.map((h, i) => (
-            <Reveal key={h.name} delay={i * 80}>
-              <div className="card card-hover h-full p-7">
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-gold-tint">
-                  <PinIcon className="h-6 w-6 text-gold-deep" />
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          {brands.map((b, i) => {
+            const Icon = brandIcons[i % brandIcons.length];
+            const link = brandLinks[i];
+            const inner = (
+              <>
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-abyss">
+                  <Icon className="h-6 w-6 text-gold" />
                 </span>
-                <h3 className="display mt-5 text-2xl text-ink">{h.name}</h3>
-                <p className="mt-2 text-[14.5px] leading-relaxed text-muted">{h.desc}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal className="mt-10 text-center">
-          <Link
-            href="/network"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-ink px-7 py-3 text-[15px] font-bold text-ink transition-colors hover:border-gold-deep hover:text-gold-deep"
-          >
-            {t("network.cta")}
-            <ArrowRightIcon className="h-4 w-4" />
-          </Link>
-        </Reveal>
-      </section>
-
-      {/* WHY US */}
-      <section className="border-y border-line bg-cream/60">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <SectionHead kicker={t("why.kicker")} title={t("why.title")} />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {points.map((p, i) => {
-              const Icon = whyIcons[i % whyIcons.length];
-              return (
-                <Reveal key={p.title} delay={i * 80}>
-                  <div className="h-full rounded-2xl bg-paper p-6">
-                    <span className="grid h-11 w-11 place-items-center rounded-xl bg-abyss">
-                      <Icon className="h-5 w-5 text-gold" />
-                    </span>
-                    <h3 className="display mt-4 text-xl text-ink">{p.title}</h3>
-                    <p className="mt-2 text-[14px] leading-relaxed text-muted">{p.desc}</p>
-                  </div>
-                </Reveal>
-              );
-            })}
-          </div>
+                <span className="display mt-5 text-xl text-ink">{b.name}</span>
+                <span className="mt-2 block text-[13.5px] leading-relaxed text-muted">{b.desc}</span>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-[13.5px] font-bold text-gold-deep">
+                  {link.external ? <ExternalIcon className="h-4 w-4" /> : <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />}
+                </span>
+              </>
+            );
+            const cls = "card card-hover group block h-full p-6";
+            return (
+              <Reveal key={b.name} delay={i * 60}>
+                {link.external ? (
+                  <a href={link.href} target="_blank" rel="noreferrer" className={cls}>{inner}</a>
+                ) : (
+                  <Link href={link.href} className={cls}>{inner}</Link>
+                )}
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 
@@ -187,7 +215,7 @@ export default async function HomePage({ params }: Props) {
               {t("cosBand.sub")}
             </p>
             <a
-              href="https://www.nielcos.ai"
+              href={`https://www.nielcos.ai/${cosL}?${UTM}`}
               target="_blank"
               rel="noreferrer"
               className="mt-8 inline-flex items-center gap-2 rounded-full border border-gold/60 px-7 py-3.5 text-[15px] font-bold text-gold transition-colors hover:bg-gold hover:text-abyss"
