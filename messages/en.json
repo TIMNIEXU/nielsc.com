@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "title": "Niel Supply Chain LLC — Your Supply Chain Advantage",
+    "description": "Freight forwarding, drayage & trucking, warehousing & fulfillment, and end-to-end logistics — backed by 100+ self-operated trucks and 24/7 dispatch."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "network": "Network",
+    "about": "About",
+    "contact": "Contact",
+    "callCta": "Call 24/7",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "tagline": "Your Supply Chain Advantage — freight forwarding, drayage, warehousing, and end-to-end logistics, powered by NIEL COS.",
+    "poweredBy": "Powered by NIEL COS™",
+    "company": "Company",
+    "servicesTitle": "Services",
+    "services": [
+      "Freight Forwarding",
+      "Drayage & Trucking",
+      "Warehousing & Fulfillment",
+      "Global Supply Chain",
+      "End-to-End Logistics"
+    ],
+    "contactTitle": "Contact",
+    "rights": "© 2026 Niel Supply Chain LLC. All rights reserved.",
+    "since": "Trade Further Together"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Niel Supply Chain LLC",
+      "titleA": "Your Supply Chain",
+      "titleB": "Advantage.",
+      "sub": "Freight forwarding, drayage & trucking, warehousing, and end-to-end logistics — backed by 100+ self-operated trucks, our own chassis, and a team that answers 24/7.",
+      "ctaQuote": "Get a Quote",
+      "ctaServices": "Explore Services",
+      "trust": [
+        "24/7 dispatch — 001-732-338-8098",
+        "APICS CSCP-certified leadership",
+        "Nationwide US coverage"
+      ]
+    },
+    "ticker": [
+      "Freight Forwarding",
+      "Drayage & Trucking",
+      "Warehousing & Fulfillment",
+      "Global Supply Chain",
+      "End-to-End Logistics",
+      "24/7 Dispatch"
+    ],
+    "services": {
+      "kicker": "What we do",
+      "title": "Five services. One accountable partner.",
+      "sub": "From a single container to a full supply chain program — pick one service or hand us the whole lane.",
+      "cardCta": "Learn more",
+      "cards": [
+        {
+          "title": "Freight Forwarding",
+          "desc": "Ocean and air freight with door-to-door coordination, documentation, and customs handoff.",
+          "img": "/images/services/svc-oceanair.jpg"
+        },
+        {
+          "title": "Drayage & Trucking",
+          "desc": "Port drayage with 100+ self-operated trucks and owned chassis — including heavy-weight containers.",
+          "img": "/images/services/svc-trucking.jpg"
+        },
+        {
+          "title": "Warehousing & Fulfillment",
+          "desc": "Secure storage, transloading, and fulfillment from LA, Savannah, Chicago, and NY-NJ.",
+          "img": "/images/services/svc-warehouse.jpg"
+        },
+        {
+          "title": "Global Supply Chain",
+          "desc": "Multi-modal planning across ocean, air, rail, and road — one plan, one point of contact.",
+          "img": "/images/services/svc-specialized.jpg"
+        },
+        {
+          "title": "End-to-End Logistics",
+          "desc": "One contract from factory floor to final delivery — freight, customs, drayage, warehouse.",
+          "img": "/images/services/svc-fba.jpg"
+        }
+      ]
+    },
+    "network": {
+      "kicker": "Where we operate",
+      "title": "Coast to coast, port to door.",
+      "sub": "Three hub regions anchor our network — with nationwide trucking and global freight partners beyond.",
+      "cta": "Explore the network",
+      "hubs": [
+        {
+          "name": "Chicago, IL",
+          "desc": "Central US rail and intermodal hub — connecting Midwest shippers to every coast."
+        },
+        {
+          "name": "New York / New Jersey",
+          "desc": "Port of NY/NJ drayage and warehousing — minutes from the terminals."
+        },
+        {
+          "name": "Los Angeles, CA",
+          "desc": "LA/Long Beach port drayage, transloading, and warehousing for Asia–US lanes."
+        }
+      ]
+    },
+    "why": {
+      "kicker": "Why Niel",
+      "title": "Built to carry your business.",
+      "points": [
+        {
+          "title": "Asset-backed trucking",
+          "desc": "100+ self-operated trucks and our own chassis — we own capacity, not just broker it."
+        },
+        {
+          "title": "Single point of contact",
+          "desc": "One team from quote to delivery. No hand-offs, no finger-pointing."
+        },
+        {
+          "title": "AI-powered by NIEL COS",
+          "desc": "Every shipment runs on NIEL COS, our AI global trade operating system — live tracking and smart documents."
+        },
+        {
+          "title": "24/7, with humans",
+          "desc": "Dispatch and support around the clock — 001-732-338-8098, answered by people who know your freight."
+        }
+      ]
+    },
+    "cosBand": {
+      "kicker": "Technology",
+      "title": "Powered by NIEL COS™",
+      "sub": "Our AI Global Trade Operating System gives every shipment live tracking, smart documents, and milestone visibility — the same platform at nielcos.ai.",
+      "cta": "Explore NIEL COS"
+    },
+    "ctaBand": {
+      "kicker": "Get started",
+      "title": "Let's move your freight.",
+      "sub": "Tell us about your lane — a real person replies with a real quote.",
+      "ctaQuote": "Get a Quote",
+      "ctaCall": "Call 001-732-338-8098"
+    }
+  },
+  "servicesPage": {
+    "kicker": "Services",
+    "title": "What we move, and how.",
+    "sub": "Five services that work alone or together — one quote, one team, one accountable partner.",
+    "cta": "Get a quote for this service",
+    "sections": [
+      {
+        "title": "Freight Forwarding",
+        "desc": "Ocean and air freight forwarding with full documentation and coordination — from booking to delivery.",
+        "bullets": [
+          "FCL & LCL ocean freight from major global ports",
+          "Air freight for time-critical cargo",
+          "Door-to-door coordination and documentation",
+          "Customs clearance handoff via Niel Customs",
+          "Cargo insurance options via Niel Insurance"
+        ]
+      },
+      {
+        "title": "Drayage & Trucking",
+        "desc": "Port and rail drayage with our own trucks and chassis — including the heavy loads others turn down.",
+        "bullets": [
+          "100+ self-operated trucks and owned chassis",
+          "Heavy-weight and overweight container expertise",
+          "Port drayage at LA/Long Beach, NY/NJ, Savannah, and more",
+          "Same-day and next-day availability on key lanes",
+          "Live status from gate-out to delivery"
+        ]
+      },
+      {
+        "title": "Warehousing & Fulfillment",
+        "desc": "Secure storage, transloading, and fulfillment — with inventory you can actually see.",
+        "bullets": [
+          "Warehouses in LA, Savannah, Chicago, and NY-NJ",
+          "Short-term storage and transloading",
+          "Pallet in/out, pick and pack",
+          "E-commerce fulfillment support",
+          "Inventory visibility through NIEL COS"
+        ]
+      },
+      {
+        "title": "Global Supply Chain",
+        "desc": "Multi-modal supply chain design and management — planned by certified professionals.",
+        "bullets": [
+          "Ocean, air, rail, and road — one integrated plan",
+          "Supplier coordination and PO management",
+          "End-to-end visibility on the NIEL COS platform",
+          "Risk monitoring and exception alerts",
+          "APICS CSCP-certified supply chain leadership"
+        ]
+      },
+      {
+        "title": "End-to-End Logistics",
+        "desc": "One contract, one point of contact — from factory floor to final delivery.",
+        "bullets": [
+          "Factory pickup to final delivery",
+          "Integrated freight, customs, drayage, and warehousing",
+          "Single invoice with transparent costs",
+          "Dedicated account management"
+        ]
+      }
+    ],
+    "bottom": {
+      "title": "Not sure which service you need?",
+      "sub": "Tell us about your shipment — we'll design the right combination.",
+      "cta": "Talk to us"
+    }
+  },
+  "networkPage": {
+    "kicker": "Network",
+    "title": "Where we operate.",
+    "sub": "Three US hub regions, seven major ports, and global freight partners — one network, one point of contact.",
+    "hubs": [
+      {
+        "name": "Chicago, IL",
+        "tag": "Central hub",
+        "desc": "Our Midwest base — intermodal rail connections to every coast and a full warehouse operation.",
+        "bullets": [
+          "Intermodal rail to and from all major ports",
+          "Chicago warehouse: storage & transloading",
+          "Midwest regional trucking"
+        ]
+      },
+      {
+        "name": "New York / New Jersey",
+        "tag": "East Coast gateway",
+        "desc": "Port of NY/NJ drayage and warehousing — our trucks run daily between the terminals and our NJ warehouse.",
+        "bullets": [
+          "Daily drayage at Port of NY/NJ terminals",
+          "NJ warehouse minutes from the port",
+          "Heavy-weight container specialists"
+        ]
+      },
+      {
+        "name": "Los Angeles, CA",
+        "tag": "West Coast gateway",
+        "desc": "LA/Long Beach port drayage, transloading, and warehousing — built for Asia–US volumes.",
+        "bullets": [
+          "Drayage at LA/Long Beach terminals",
+          "Transloading for inland distribution",
+          "LA warehouse & fulfillment"
+        ]
+      }
+    ],
+    "portsTitle": "Ports we serve",
+    "portsSub": "Regular drayage and intermodal service at:",
+    "ports": [
+      "Port of Los Angeles / Long Beach",
+      "Port of New York / New Jersey",
+      "Port of Savannah",
+      "Port of Norfolk",
+      "Port of Houston",
+      "Port of Oakland",
+      "Port of Seattle / Tacoma"
+    ],
+    "fleet": {
+      "kicker": "Asset-backed",
+      "title": "We own the trucks.",
+      "desc": "100+ self-operated trucks, owned chassis — when capacity gets tight, our customers don't feel it. Licensed and compliant: FMC OTI #033998, USDOT #4515139.",
+      "stats": [
+        {
+          "n": "100+",
+          "l": "Self-operated trucks"
+        },
+        {
+          "n": "4",
+          "l": "Warehouse regions"
+        },
+        {
+          "n": "7",
+          "l": "Ports served"
+        },
+        {
+          "n": "24/7",
+          "l": "Dispatch & support"
+        }
+      ]
+    },
+    "global": {
+      "title": "Beyond the US",
+      "desc": "Through our freight forwarding network and global partners, we coordinate ocean and air freight worldwide — with the same single point of contact.",
+      "cta": "Get a Quote"
+    }
+  },
+  "aboutPage": {
+    "kicker": "About us",
+    "title": "Your Supply Chain Advantage.",
+    "sub": "Niel Supply Chain LLC is the supply chain arm of Niel Group — asset-backed trucking, professional management, and AI-powered operations.",
+    "story": {
+      "title": "Our story",
+      "paras": [
+        "Niel Supply Chain LLC was built to do one thing well: move freight without excuses. As part of Niel Group — One Group. One Global Trade Solution — we combine asset-backed trucking with modern supply chain management and AI-powered operations.",
+        "Our roots go back to 2008, when Joma Logistics Inc put its first trucks on the road. Nearly two decades of port drayage, heavy-weight containers, and 24/7 dispatch taught us what shippers actually need: capacity you can count on, and people who answer the phone.",
+        "Today, Niel Supply Chain carries that operating DNA forward — with warehouses on both coasts and in the Midwest, a growing fulfillment practice, and every shipment running on NIEL COS, our AI global trade operating system."
+      ]
+    },
+    "group": {
+      "kicker": "Niel Group",
+      "title": "One group. One global trade solution.",
+      "entities": [
+        {
+          "name": "Niel Supply Chain",
+          "desc": "Freight, trucking, warehousing, and end-to-end logistics — this company."
+        },
+        {
+          "name": "Niel Customs",
+          "desc": "AI-powered customs brokerage and trade compliance."
+        },
+        {
+          "name": "Niel Insurance",
+          "desc": "Cargo insurance and customs bonds."
+        },
+        {
+          "name": "Joma Logistics Inc",
+          "desc": "Asset-based trucking since 2008 — 100+ self-operated trucks."
+        }
+      ]
+    },
+    "values": {
+      "kicker": "What we believe",
+      "title": "How we work.",
+      "items": [
+        {
+          "title": "Own the outcome",
+          "desc": "We put our own trucks, chassis, and warehouses behind every commitment."
+        },
+        {
+          "title": "Answer the phone",
+          "desc": "24/7 dispatch by people who know your freight — not a ticket queue."
+        },
+        {
+          "title": "One team, one plan",
+          "desc": "A single point of contact from quote to delivery — no hand-offs, no finger-pointing."
+        },
+        {
+          "title": "Build with technology",
+          "desc": "NIEL COS gives every shipment live tracking, smart documents, and real visibility."
+        }
+      ]
+    },
+    "leadership": {
+      "title": "Certified leadership",
+      "desc": "Niel Supply Chain is led by Tim Xu, an APICS CSCP-certified supply chain professional — bringing certified planning, sourcing, and operations discipline to every lane we run."
+    },
+    "numbers": [
+      {
+        "n": "2008",
+        "l": "Joma Logistics founded"
+      },
+      {
+        "n": "100+",
+        "l": "Self-operated trucks"
+      },
+      {
+        "n": "4",
+        "l": "Warehouse regions"
+      },
+      {
+        "n": "24/7",
+        "l": "Dispatch"
+      }
+    ],
+    "cta": {
+      "title": "Work with us.",
+      "sub": "Tell us about your lane — we'll reply with a real quote.",
+      "cta": "Get a Quote"
+    }
+  },
+  "contactPage": {
+    "kicker": "Contact",
+    "title": "Let's talk freight.",
+    "sub": "Call, email, or send the form — a real person replies.",
+    "cards": {
+      "phone": {
+        "title": "Phone — 24/7",
+        "value": "001-732-338-8098",
+        "note": "Dispatch and support, around the clock."
+      },
+      "email": {
+        "title": "Email",
+        "value": "info@nielcustoms.ai",
+        "note": "For quotes: tim@jomainc.com"
+      },
+      "locations": {
+        "title": "Locations",
+        "value": "Chicago, IL · New York / New Jersey · Los Angeles, CA",
+        "note": "Nationwide trucking, global freight."
+      },
+      "hours": {
+        "title": "WeChat",
+        "value": "timniexu",
+        "note": "Add us on WeChat — no QR codes, just the ID."
+      }
+    },
+    "form": {
+      "title": "Request a quote",
+      "sub": "Fill this in — it opens your email app with everything composed. No account, no tracking.",
+      "name": "Your name",
+      "company": "Company",
+      "email": "Email",
+      "service": "Service needed",
+      "message": "Tell us about your shipment",
+      "messagePh": "Lane, volume, timeline — anything that helps us quote accurately.",
+      "submit": "Compose email",
+      "note": "This opens your email app addressed to info@nielcustoms.ai — nothing is sent automatically.",
+      "errRequired": "Please add your name and a few words about your shipment.",
+      "errEmail": "That email doesn't look right."
+    }
+  }
+}
