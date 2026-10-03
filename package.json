@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.2",
+    "jose": "^6.2.12",
     "next": "16.3.6",
     "next-intl": "^4.14.7",
     "pdf-parse": "^2.4.5",

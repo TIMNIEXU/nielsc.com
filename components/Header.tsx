@@ -6,6 +6,7 @@ import { Link, usePathname } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
+import SsoButton from "./SsoButton";
 import { MenuIcon, XIcon, PhoneIcon } from "./icons";
 
 export default function Header() {
@@ -51,6 +52,9 @@ export default function Header() {
 
         <div className="flex items-center gap-2 sm:gap-3">
           <LanguageSwitcher />
+          <div className="hidden md:block">
+            <SsoButton />
+          </div>
           <a
             href="tel:+17323388098"
             className="hidden items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-[14px] font-bold text-abyss transition-colors hover:bg-gold-deep hover:text-white md:inline-flex"
@@ -100,6 +104,9 @@ export default function Header() {
             <PhoneIcon className="h-5 w-5" />
             {t("callCta")}
           </a>
+          <div className="mt-2 flex justify-center" onClick={() => setOpen(false)}>
+            <SsoButton onNavigate={() => setOpen(false)} />
+          </div>
         </nav>
       )}
     </header>

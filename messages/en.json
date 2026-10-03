@@ -11,7 +11,10 @@
     "contact": "Contact",
     "callCta": "Call 24/7",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "signIn": "Sign In",
+    "signOut": "Sign out",
+    "myNiel": "My NIEL workspace"
   },
   "footer": {
     "tagline": "Your Supply Chain Advantage — freight forwarding, drayage, warehousing, and end-to-end logistics, powered by NIEL COS.",
