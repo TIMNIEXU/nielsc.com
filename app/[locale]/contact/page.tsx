@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import SectionHead from "@/components/SectionHead";
 import Reveal from "@/components/Reveal";
@@ -77,6 +78,37 @@ export default async function ContactPage({ params }: Props) {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* QR CHAT — WeChat + WhatsApp */}
+      <section className="mx-auto max-w-7xl px-4 pb-4 sm:px-6">
+        <Reveal>
+          <div className="card mx-auto max-w-3xl p-7 sm:p-10">
+            <p className="eyebrow">{t("qr.kicker")}</p>
+            <h2 className="display mt-3 text-3xl text-ink">{t("qr.title")}</h2>
+            <p className="mt-2 text-[15px] text-muted">{t("qr.sub")}</p>
+            <div className="mt-8 grid grid-cols-2 gap-6">
+              {[
+                { src: "/wechat-qr.jpg", label: t("qr.wechat"), note: t("qr.wechatNote") },
+                { src: "/whatsapp-qr.png", label: t("qr.whatsapp"), note: t("qr.whatsappNote") },
+              ].map((q) => (
+                <div key={q.label} className="text-center">
+                  <div className="mx-auto max-w-[220px] overflow-hidden rounded-2xl border border-line bg-white p-3">
+                    <Image
+                      src={q.src}
+                      alt={q.label}
+                      width={440}
+                      height={440}
+                      className="h-auto w-full"
+                    />
+                  </div>
+                  <p className="display mt-3 text-lg text-ink">{q.label}</p>
+                  <p className="mt-1 text-[13px] text-muted">{q.note}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6">

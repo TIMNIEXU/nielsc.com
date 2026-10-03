@@ -429,6 +429,15 @@
       "note": "This opens your email app addressed to info@nielcustoms.ai — nothing is sent automatically.",
       "errRequired": "Please add your name and a few words about your shipment.",
       "errEmail": "That email doesn't look right."
+    },
+    "qr": {
+      "kicker": "Chat with us",
+      "title": "Scan to start a conversation",
+      "sub": "Reach our team directly on WeChat or WhatsApp.",
+      "wechat": "WeChat",
+      "wechatNote": "Scan to add us on WeChat",
+      "whatsapp": "WhatsApp",
+      "whatsappNote": "Scan to chat on WhatsApp"
     }
   }
 }

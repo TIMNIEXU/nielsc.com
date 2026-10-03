@@ -429,6 +429,15 @@
       "note": "这会打开您的邮件客户端，收件人为 info@nielcustoms.ai——不会自动发送任何内容。",
       "errRequired": "请填写您的姓名，并简单描述货物。",
       "errEmail": "邮箱格式似乎不正确。"
+    },
+    "qr": {
+      "kicker": "在线沟通",
+      "title": "扫码开始对话",
+      "sub": "通过微信或 WhatsApp 直接联系我们的团队。",
+      "wechat": "微信",
+      "wechatNote": "扫码添加微信",
+      "whatsapp": "WhatsApp",
+      "whatsappNote": "扫码开始 WhatsApp 对话"
     }
   }
 }
