@@ -460,14 +460,17 @@
       "successKicker": "案件已创建",
       "successTitle": "您的供应链案件已就绪。",
       "successSub": "您的案件编号：",
-      "successNote": "邮件客户端将打开并自动填好所有内容——点发送即可。我们会把每个环节分流到对的团队。",
+      "successNote": "您的案件已进入我们的系统——我们会把每个环节分流到对的团队，并通过邮件回复您。",
       "routingTitle": "接下来会发生什么",
       "routing": [
         "报关 → Niel Customs",
         "拖车运输 → JOMA Logistics",
         "保险与保证金 → Niel Insurance",
         "每个环节在 NIEL COS 中全程可见"
-      ]
+      ],
+      "sending": "正在创建案件…",
+      "fallbackNote": "邮件客户端将打开并自动填好所有内容——请发送，并在邮件中注明您的案件编号。",
+      "ordersTitle": "您的服务订单"
     },
     "qr": {
       "kicker": "在线沟通",

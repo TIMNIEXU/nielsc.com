@@ -29,6 +29,7 @@ export type FormMessages = {
   docs: string;
   docsNote: string;
   submit: string;
+  sending: string;
   errRequired: string;
   errEmail: string;
   errService: string;
@@ -36,9 +37,29 @@ export type FormMessages = {
   successTitle: string;
   successSub: string;
   successNote: string;
+  fallbackNote: string;
+  ordersTitle: string;
   routingTitle: string;
   routing: string[];
 };
+
+type CreatedOrder = { service: string; so_no: string };
+
+/* Canonical service types for NIEL COS. Index-aligned with form.services
+   (both locales): the 9 checkbox labels in messages map to these. */
+const SERVICE_TYPES = [
+  "customs", // Customs
+  "freight", // Ocean Freight
+  "freight", // Air Freight
+  "drayage", // Drayage
+  "drayage", // Trucking
+  "warehouse", // Warehousing
+  "insurance", // Insurance
+  "bond", // Customs Bond
+  "end_to_end", // End-to-End (coordination flag, not a service type)
+];
+
+const CASE_API = "https://www.nielcos.ai/api/public/supply-chain-case";
 
 export default function SupplyChainCaseForm({ form }: { form: FormMessages }) {
   const [company, setCompany] = useState("");
@@ -54,9 +75,18 @@ export default function SupplyChainCaseForm({ form }: { form: FormMessages }) {
   const [notes, setNotes] = useState("");
   const [docs, setDocs] = useState<string[]>([]);
   const [err, setErr] = useState("");
+  const [sending, setSending] = useState(false);
   const [caseId, setCaseId] = useState("");
+  const [orders, setOrders] = useState<CreatedOrder[]>([]);
+  const [viaEmail, setViaEmail] = useState(false);
 
   const services: string[] = form.services ?? [];
+
+  /* First picked label for a canonical type (for the confirmation list). */
+  const labelFor = (t: string) => {
+    const i = SERVICE_TYPES.indexOf(t);
+    return i >= 0 && services[i] ? services[i] : t;
+  };
 
   const inputCls =
     "w-full rounded-xl border border-line bg-white px-4 py-2.5 text-[14px] text-ink outline-none focus:border-gold-deep focus:ring-2 focus:ring-gold/30";
@@ -65,21 +95,7 @@ export default function SupplyChainCaseForm({ form }: { form: FormMessages }) {
   const toggle = (s: string) =>
     setPicked((p) => (p.includes(s) ? p.filter((x) => x !== s) : [...p, s]));
 
-  const submit = () => {
-    setErr("");
-    if (!contact.trim() || !email.trim()) {
-      setErr(form.errRequired);
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
-      setErr(form.errEmail);
-      return;
-    }
-    if (picked.length === 0) {
-      setErr(form.errService);
-      return;
-    }
-    const id = `SC-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
+  const mailtoFallback = (id: string) => {
     const subject = `Supply Chain Case ${id} — ${picked.join(", ")} — ${company.trim() || contact.trim()}`;
     const body = [
       `Supply Chain Case: ${id}`,
@@ -104,8 +120,78 @@ export default function SupplyChainCaseForm({ form }: { form: FormMessages }) {
         ? `Documents (to be emailed separately): ${docs.join(", ")}`
         : `Documents: none attached`,
     ].join("\n");
-    setCaseId(id);
     window.location.href = `mailto:quote@nielsc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const submit = async () => {
+    if (sending) return;
+    setErr("");
+    if (!contact.trim() || !email.trim()) {
+      setErr(form.errRequired);
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      setErr(form.errEmail);
+      return;
+    }
+    if (picked.length === 0) {
+      setErr(form.errService);
+      return;
+    }
+    const id = `SC-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
+    const payload = {
+      case_id: id,
+      company: company.trim(),
+      contact: contact.trim(),
+      email: email.trim(),
+      phone: phone.trim(),
+      services: picked.map((label) => ({
+        type: SERVICE_TYPES[services.indexOf(label)] ?? "freight",
+        label,
+      })),
+      end_to_end: picked.some((label) => SERVICE_TYPES[services.indexOf(label)] === "end_to_end"),
+      origin: origin.trim(),
+      destination: destination.trim(),
+      cargo: cargo.trim(),
+      load: load.trim(),
+      ready: ready.trim(),
+      notes: notes.trim(),
+      docs,
+      locale: document.documentElement.lang || "en",
+    };
+
+    setSending(true);
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 12000);
+      const res = await fetch(CASE_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        signal: ctrl.signal,
+      });
+      clearTimeout(timer);
+      const data = (await res.json().catch(() => null)) as {
+        ok?: boolean;
+        case_id?: string;
+        orders?: CreatedOrder[];
+      } | null;
+      if (res.ok && data?.ok) {
+        setCaseId(data.case_id || id);
+        setOrders(Array.isArray(data.orders) ? data.orders : []);
+        setViaEmail(false);
+        return;
+      }
+      throw new Error("api_not_ok");
+    } catch {
+      // Backend unreachable — never lose the lead: fall back to email.
+      mailtoFallback(id);
+      setCaseId(id);
+      setOrders([]);
+      setViaEmail(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   if (caseId) {
@@ -118,8 +204,25 @@ export default function SupplyChainCaseForm({ form }: { form: FormMessages }) {
           {caseId}
         </p>
         <p className="mx-auto mt-4 max-w-lg text-[14px] leading-relaxed text-muted">
-          {form.successNote}
+          {viaEmail ? form.fallbackNote : form.successNote}
         </p>
+        {orders.length > 0 && (
+          <div className="mx-auto mt-6 max-w-lg rounded-2xl border border-line bg-white p-6 text-left">
+            <p className="text-[12.5px] font-bold uppercase tracking-[0.18em] text-gold-deep">
+              {form.ordersTitle}
+            </p>
+            <ul className="mt-3 space-y-2">
+              {orders.map((o) => (
+                <li key={o.so_no} className="flex items-center justify-between gap-3 text-[14px]">
+                  <span className="font-bold text-ink">{labelFor(o.service)}</span>
+                  <span className="display rounded-lg bg-abyss px-3 py-1 text-[13px] tracking-wide text-gold">
+                    {o.so_no}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className="mx-auto mt-8 max-w-lg rounded-2xl border border-line bg-cream/60 p-6 text-left">
           <p className="text-[12.5px] font-bold uppercase tracking-[0.18em] text-gold-deep">
             {form.routingTitle}
@@ -282,10 +385,11 @@ export default function SupplyChainCaseForm({ form }: { form: FormMessages }) {
 
       <button
         onClick={submit}
-        className="mt-5 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3.5 text-[15px] font-bold text-abyss transition-colors hover:bg-gold-deep hover:text-white"
+        disabled={sending}
+        className="mt-5 inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3.5 text-[15px] font-bold text-abyss transition-colors hover:bg-gold-deep hover:text-white disabled:opacity-60"
       >
         <SendIcon className="h-4 w-4" />
-        {form.submit}
+        {sending ? form.sending : form.submit}
       </button>
     </div>
   );

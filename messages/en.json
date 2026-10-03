@@ -460,14 +460,17 @@
       "successKicker": "Case created",
       "successTitle": "Your supply chain case is ready.",
       "successSub": "Your case ID:",
-      "successNote": "Your email app will open with everything pre-filled — just hit send. We'll route each leg to the right team.",
+      "successNote": "Your case is in our system — we'll route each leg to the right team and reply to your email.",
       "routingTitle": "What happens next",
       "routing": [
         "Customs → Niel Customs",
         "Drayage & trucking → JOMA Logistics",
         "Insurance & bonds → Niel Insurance",
         "Every leg stays visible in NIEL COS"
-      ]
+      ],
+      "sending": "Creating your case…",
+      "fallbackNote": "Your email app will open with everything pre-filled — just hit send, quoting your case ID below.",
+      "ordersTitle": "Your service orders"
     },
     "qr": {
       "kicker": "Chat with us",
