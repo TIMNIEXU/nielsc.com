@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Niel Supply Chain LLC — Your Supply Chain Advantage",
-    "description": "Freight forwarding, drayage & trucking, warehousing & fulfillment, and end-to-end logistics — backed by 100+ self-operated trucks and 24/7 dispatch."
+    "description": "Freight forwarding, drayage & trucking, warehousing & fulfillment, and end-to-end logistics — asset-backed through JOMA Logistics, with 24/7 dispatch."
   },
   "nav": {
     "home": "Home",
@@ -29,7 +29,7 @@
     "rights": "© 2026 Niel Supply Chain LLC. All rights reserved.",
     "since": "Trade Further Together",
     "groupEyebrow": "Part of NIEL Group",
-    "groupNote": "Six brands. One connected trade network.",
+    "groupNote": "One Group. One Connected Trade Network.",
     "operatedBy": "This website is operated by Niel Supply Chain LLC.",
     "entityNote": "Services are provided by their respective NIEL Group operating companies."
   },
@@ -117,7 +117,7 @@
     "group": {
       "kicker": "Niel Group",
       "title": "One group. Every trade door.",
-      "sub": "Six doors, one system. Enter wherever fits — you're always inside NIEL Group.",
+      "sub": "One group, one connected trade network. Enter wherever fits — you're always inside NIEL Group.",
       "brands": [
         {
           "name": "Niel Supply Chain",
@@ -184,7 +184,7 @@
         "title": "Drayage & Trucking",
         "desc": "Port and rail drayage with our own trucks and chassis — including the heavy loads others turn down.",
         "bullets": [
-          "100+ self-operated trucks and owned chassis",
+          "Asset-backed through JOMA Logistics — 100+ self-operated trucks and owned chassis",
           "Heavy-weight and overweight container expertise",
           "Port drayage at LA/Long Beach, NY/NJ, Savannah, and more",
           "Same-day and next-day availability on key lanes",
@@ -279,12 +279,12 @@
     ],
     "fleet": {
       "kicker": "Asset-backed",
-      "title": "We own the trucks.",
-      "desc": "100+ self-operated trucks, owned chassis — when capacity gets tight, our customers don't feel it. Licensed and compliant: FMC OTI #033998, USDOT #4515139.",
+      "title": "Asset-backed through JOMA Logistics.",
+      "desc": "Access to 100+ self-operated trucks and chassis through our affiliated logistics operations — when capacity gets tight, our customers don't feel it. JOMA Logistics operating credentials: FMC OTI #033998 · USDOT #4515139.",
       "stats": [
         {
           "n": "100+",
-          "l": "Self-operated trucks"
+          "l": "Trucks via JOMA Logistics"
         },
         {
           "n": "4",
@@ -298,7 +298,8 @@
           "n": "24/7",
           "l": "Dispatch & support"
         }
-      ]
+      ],
+      "cta": "See JOMA Logistics operations"
     },
     "global": {
       "title": "Beyond the US",
@@ -337,6 +338,10 @@
         {
           "name": "Joma Logistics Inc",
           "desc": "Asset-based trucking since 2008 — 100+ self-operated trucks."
+        },
+        {
+          "name": "NIEL COS",
+          "desc": "The AI trade operating system connecting the group."
         }
       ]
     },
@@ -373,7 +378,7 @@
       },
       {
         "n": "100+",
-        "l": "Self-operated trucks"
+        "l": "Trucks via JOMA Logistics"
       },
       {
         "n": "4",
@@ -402,8 +407,8 @@
       },
       "email": {
         "title": "Email",
-        "value": "info@nielcustoms.ai",
-        "note": "For quotes: tim@jomainc.com"
+        "value": "info@nielsc.com",
+        "note": "For quotes: quote@nielsc.com"
       },
       "locations": {
         "title": "Locations",
@@ -417,18 +422,52 @@
       }
     },
     "form": {
-      "title": "Request a quote",
-      "sub": "Fill this in — it opens your email app with everything composed. No account, no tracking.",
-      "name": "Your name",
+      "title": "Start your supply chain case",
+      "sub": "Tell us what you need — one service or the entire chain. You get a case ID instantly.",
       "company": "Company",
+      "contact": "Contact name",
       "email": "Email",
-      "service": "Service needed",
-      "message": "Tell us about your shipment",
-      "messagePh": "Lane, volume, timeline — anything that helps us quote accurately.",
-      "submit": "Compose email",
-      "note": "This opens your email app addressed to info@nielcustoms.ai — nothing is sent automatically.",
-      "errRequired": "Please add your name and a few words about your shipment.",
-      "errEmail": "That email doesn't look right."
+      "phone": "Phone (optional)",
+      "needTitle": "What do you need?",
+      "services": [
+        "Customs",
+        "Ocean Freight",
+        "Air Freight",
+        "Drayage",
+        "Trucking",
+        "Warehousing",
+        "Insurance",
+        "Customs Bond",
+        "End-to-End"
+      ],
+      "origin": "Origin",
+      "originPh": "e.g. Shanghai, China",
+      "destination": "Destination",
+      "destinationPh": "e.g. Chicago, IL",
+      "cargo": "Cargo description",
+      "cargoPh": "e.g. furniture, 2x40'HQ",
+      "load": "Container / weight",
+      "loadPh": "e.g. 1x40'HQ, 22 tons",
+      "ready": "Ready date / ETA",
+      "notes": "Notes",
+      "notesPh": "Anything else we should know",
+      "docs": "Documents",
+      "docsNote": "After submitting, please email your documents to quote@nielsc.com with your case ID.",
+      "submit": "Create my case",
+      "errRequired": "Please fill in the required fields.",
+      "errEmail": "Please enter a valid email address.",
+      "errService": "Please select at least one service.",
+      "successKicker": "Case created",
+      "successTitle": "Your supply chain case is ready.",
+      "successSub": "Your case ID:",
+      "successNote": "Your email app will open with everything pre-filled — just hit send. We'll route each leg to the right team.",
+      "routingTitle": "What happens next",
+      "routing": [
+        "Customs → Niel Customs",
+        "Drayage & trucking → JOMA Logistics",
+        "Insurance & bonds → Niel Insurance",
+        "Every leg stays visible in NIEL COS"
+      ]
     },
     "qr": {
       "kicker": "Chat with us",

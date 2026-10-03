@@ -2,25 +2,17 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import SectionHead from "@/components/SectionHead";
 import Reveal from "@/components/Reveal";
-import QuoteMailtoForm from "@/components/QuoteMailtoForm";
+import SupplyChainCaseForm, { type FormMessages } from "@/components/SupplyChainCaseForm";
 import { MailIcon, PhoneIcon, PinIcon, CheckIcon } from "@/components/icons";
 
 type Props = { params: Promise<{ locale: string }> };
-
-const FORM_KEYS = [
-  "name", "company", "email", "service", "message", "messagePh",
-  "submit", "note", "errRequired", "errEmail",
-];
 
 export default async function ContactPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "contactPage" });
-  const tf = await getTranslations({ locale, namespace: "footer" });
 
-  const dict: Record<string, string> = {};
-  for (const k of FORM_KEYS) dict[k] = t(`form.${k}`);
-  const services = tf.raw("services") as string[];
+  const form = t.raw("form") as unknown as FormMessages;
 
   const cards = [
     {
@@ -35,7 +27,7 @@ export default async function ContactPage({ params }: Props) {
       title: t("cards.email.title"),
       value: t("cards.email.value"),
       note: t("cards.email.note"),
-      href: "mailto:info@nielcustoms.ai",
+      href: "mailto:info@nielsc.com",
     },
     {
       icon: PinIcon,
@@ -117,7 +109,7 @@ export default async function ContactPage({ params }: Props) {
             <h2 className="display text-3xl text-ink">{t("form.title")}</h2>
             <p className="mt-2 text-[15px] text-muted">{t("form.sub")}</p>
             <div className="mt-6">
-              <QuoteMailtoForm messages={dict} services={services} />
+              <SupplyChainCaseForm form={form} />
             </div>
           </div>
         </Reveal>

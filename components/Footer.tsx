@@ -129,11 +129,11 @@ export default async function Footer() {
             </li>
             <li>
               <a
-                href="mailto:info@nielcustoms.ai"
+                href="mailto:info@nielsc.com"
                 className="flex gap-2.5 transition-colors hover:text-gold"
               >
                 <MailIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                info@nielcustoms.ai
+                info@nielsc.com
               </a>
             </li>
           </ul>

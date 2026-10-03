@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Niel Supply Chain LLC — 您的供应链优势",
-    "description": "国际货运、拖车运输、仓储履约与一站式物流服务——100+ 自营卡车，24/7 调度支持。"
+    "description": "国际货运、拖车运输、仓储履约与一站式物流服务——依托 JOMA Logistics 资产运力，24/7 调度支持。"
   },
   "nav": {
     "home": "首页",
@@ -29,7 +29,7 @@
     "rights": "© 2026 Niel Supply Chain LLC. 版权所有。",
     "since": "Trade Further Together",
     "groupEyebrow": "NIEL Group 成员",
-    "groupNote": "六个品牌，一张连通的贸易网络。",
+    "groupNote": "一个集团，一张连通的贸易网络。",
     "operatedBy": "本网站由 Niel Supply Chain LLC 运营。",
     "entityNote": "各项服务由 NIEL Group 旗下各运营公司分别提供。"
   },
@@ -117,7 +117,7 @@
     "group": {
       "kicker": "Niel Group",
       "title": "一个集团，每一扇贸易之门。",
-      "sub": "六个入口，一套体系。从哪里进都合适——您始终在 NIEL Group 里面。",
+      "sub": "一个集团，一张连通的贸易网络。从哪里进都合适——您始终在 NIEL Group 里面。",
       "brands": [
         {
           "name": "Niel Supply Chain",
@@ -184,7 +184,7 @@
         "title": "拖车运输",
         "desc": "自营卡车与车架的港口、铁路拖柜——包括别人不接的重箱。",
         "bullets": [
-          "100+ 自营卡车与自有车架",
+          "依托 JOMA Logistics 资产运力——100+ 自营卡车与自有车架",
           "重箱与超重箱的专业操作经验",
           "洛杉矶/长滩、纽约/新泽西、萨凡纳等港口的拖柜",
           "主要线路当日/次日可用运力",
@@ -279,12 +279,12 @@
     ],
     "fleet": {
       "kicker": "自营运力",
-      "title": "车是自己的。",
-      "desc": "100+ 自营卡车、自有车架——运力紧张时，我们的客户不受影响。合规资质：FMC OTI #033998，USDOT #4515139。",
+      "title": "依托 JOMA Logistics 的资产运力。",
+      "desc": "通过关联物流运营获得 100+ 自营卡车与车架运力——运力紧张时，我们的客户不受影响。JOMA Logistics 运营资质：FMC OTI #033998 · USDOT #4515139。",
       "stats": [
         {
           "n": "100+",
-          "l": "自营卡车"
+          "l": "自营卡车 · JOMA Logistics"
         },
         {
           "n": "4",
@@ -298,7 +298,8 @@
           "n": "24/7",
           "l": "调度与支持"
         }
-      ]
+      ],
+      "cta": "查看 JOMA Logistics 运营"
     },
     "global": {
       "title": "美国之外",
@@ -337,6 +338,10 @@
         {
           "name": "Joma Logistics Inc",
           "desc": "自 2008 年的自营卡车运输——100+ 自营卡车。"
+        },
+        {
+          "name": "NIEL COS",
+          "desc": "连接集团的 AI 贸易操作系统。"
         }
       ]
     },
@@ -373,7 +378,7 @@
       },
       {
         "n": "100+",
-        "l": "自营卡车"
+        "l": "自营卡车 · JOMA Logistics"
       },
       {
         "n": "4",
@@ -402,8 +407,8 @@
       },
       "email": {
         "title": "邮箱",
-        "value": "info@nielcustoms.ai",
-        "note": "报价请联系：tim@jomainc.com"
+        "value": "info@nielsc.com",
+        "note": "报价请联系：quote@nielsc.com"
       },
       "locations": {
         "title": "地点",
@@ -417,18 +422,52 @@
       }
     },
     "form": {
-      "title": "请求报价",
-      "sub": "填好表单——会自动打开您的邮件客户端并写好内容。无需注册，无追踪。",
-      "name": "您的姓名",
+      "title": "开始您的供应链案件",
+      "sub": "告诉我们您的需求——选一个环节或整条链。提交后立即获得案件编号。",
       "company": "公司",
+      "contact": "联系人",
       "email": "邮箱",
-      "service": "需要的服务",
-      "message": "描述您的货物",
-      "messagePh": "线路、货量、时间——有助于我们准确报价的信息。",
-      "submit": "写邮件",
-      "note": "这会打开您的邮件客户端，收件人为 info@nielcustoms.ai——不会自动发送任何内容。",
-      "errRequired": "请填写您的姓名，并简单描述货物。",
-      "errEmail": "邮箱格式似乎不正确。"
+      "phone": "电话（选填）",
+      "needTitle": "您需要什么服务？",
+      "services": [
+        "报关",
+        "海运",
+        "空运",
+        "拖车",
+        "卡车运输",
+        "仓储",
+        "保险",
+        "海关保证金",
+        "一站式"
+      ],
+      "origin": "起运地",
+      "originPh": "如：中国上海",
+      "destination": "目的地",
+      "destinationPh": "如：芝加哥",
+      "cargo": "货物描述",
+      "cargoPh": "如：家具，2x40'HQ",
+      "load": "柜型 / 重量",
+      "loadPh": "如：1x40'HQ，22吨",
+      "ready": "备货日期 / ETA",
+      "notes": "备注",
+      "notesPh": "其他需要说明的事项",
+      "docs": "单证",
+      "docsNote": "提交后，请将单证发到 quote@nielsc.com，并注明您的案件编号。",
+      "submit": "创建案件",
+      "errRequired": "请填写必填项。",
+      "errEmail": "请输入有效的邮箱地址。",
+      "errService": "请至少选择一项服务。",
+      "successKicker": "案件已创建",
+      "successTitle": "您的供应链案件已就绪。",
+      "successSub": "您的案件编号：",
+      "successNote": "邮件客户端将打开并自动填好所有内容——点发送即可。我们会把每个环节分流到对的团队。",
+      "routingTitle": "接下来会发生什么",
+      "routing": [
+        "报关 → Niel Customs",
+        "拖车运输 → JOMA Logistics",
+        "保险与保证金 → Niel Insurance",
+        "每个环节在 NIEL COS 中全程可见"
+      ]
     },
     "qr": {
       "kicker": "在线沟通",

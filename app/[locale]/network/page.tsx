@@ -79,6 +79,15 @@ export default async function NetworkPage({ params }: Props) {
             <p className="eyebrow eyebrow-light">{t("fleet.kicker")}</p>
             <h2 className="display mt-4 text-4xl text-paper sm:text-5xl">{t("fleet.title")}</h2>
             <p className="mt-4 text-lg leading-relaxed text-paper/70">{t("fleet.desc")}</p>
+            <a
+              href="https://www.jomaus.com?utm_source=nielsc.com&utm_medium=network_fleet"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex items-center gap-2 text-[15px] font-bold text-gold transition-colors hover:text-paper"
+            >
+              {t("fleet.cta")}
+              <span aria-hidden="true">→</span>
+            </a>
           </Reveal>
           <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
             {stats.map((s, i) => (
