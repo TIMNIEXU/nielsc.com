@@ -94,3 +94,15 @@ body {
   height: 14px;
   opacity: 0.5;
 }
+
+/* Ticker marquee — track holds 2x items, loops seamlessly at -50% */
+.ticker-track {
+  animation: ticker-scroll 28s linear infinite;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
