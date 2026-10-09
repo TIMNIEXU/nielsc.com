@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import Logo from "./Logo";
@@ -11,13 +11,16 @@ import { MenuIcon, XIcon, PhoneIcon } from "./icons";
 
 export default function Header() {
   const t = useTranslations("nav");
+  const locale = useLocale();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const dutyUrl = `https://www.nielcos.ai/${locale}/landed-cost`;
 
   const links = [
     { href: "/", label: t("home") },
     { href: "/services", label: t("services") },
     { href: "/us-customs", label: t("usCustoms") },
+    { href: dutyUrl, label: t("dutyEstimator"), external: true },
     { href: "/network", label: t("network") },
     { href: "/about", label: t("about") },
     { href: "/contact", label: t("contact") },
@@ -32,6 +35,19 @@ export default function Header() {
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {links.map((l) => {
+            if (l.external) {
+              return (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md px-4 py-2 text-[14.5px] font-semibold text-ink-soft transition-colors hover:bg-cream hover:text-ink"
+                >
+                  {l.label}
+                </a>
+              );
+            }
             const active =
               l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
             return (
@@ -81,6 +97,20 @@ export default function Header() {
           aria-label="Mobile"
         >
           {links.map((l) => {
+            if (l.external) {
+              return (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="block rounded-lg px-4 py-3 text-lg font-semibold text-ink hover:bg-cream"
+                >
+                  {l.label}
+                </a>
+              );
+            }
             const active =
               l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
             return (

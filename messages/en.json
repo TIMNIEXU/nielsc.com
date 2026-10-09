@@ -15,7 +15,8 @@
     "signIn": "Sign In",
     "signOut": "Sign out",
     "myNiel": "My NIEL workspace",
-    "usCustoms": "US Customs"
+    "usCustoms": "US Customs",
+    "dutyEstimator": "US Duty Estimator"
   },
   "footer": {
     "tagline": "Your Supply Chain Advantage — freight forwarding, drayage, warehousing, and end-to-end logistics, powered by NIEL COS.",
