@@ -48,7 +48,13 @@ export default async function HomePage({ params }: Props) {
     { href: `https://www.nielcos.ai/${cosL}/app?${UTM}`, external: true },
   ];
 
-  const brandIcons = [BuildingIcon, FileCheckIcon, TruckIcon, ShieldCheckIcon, NetworkIcon];
+  const brandLogos = [
+    "/nielsc-logo.png",         // Niel Supply Chain
+    "/nielsc-logo.png",         // Niel Customs (operated by Niel Supply Chain LLC)
+    "/logo-joma-logistics.png", // JOMA Logistics
+    "/logo-niel-insurance.png", // Niel Insurance
+    "/nielsc-logo.png",          // NIEL COS
+  ];
   const brandLinks: { href: string; external: boolean }[] = [
     { href: "/", external: false },
     { href: `https://www.nielcustoms.ai?${UTM}`, external: true },
@@ -175,13 +181,15 @@ export default async function HomePage({ params }: Props) {
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {brands.map((b, i) => {
-            const Icon = brandIcons[i % brandIcons.length];
+            const logo = brandLogos[i % brandLogos.length];
             const link = brandLinks[i];
             const inner = (
               <>
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-abyss">
-                  <Icon className="h-6 w-6 text-gold" />
-                </span>
+                <img
+                  src={logo}
+                  alt={b.name}
+                  className="h-12 w-auto max-w-[140px] object-contain"
+                />
                 <span className="display mt-5 text-xl text-ink">{b.name}</span>
                 <span className="mt-2 block text-[13.5px] leading-relaxed text-muted">{b.desc}</span>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-[13.5px] font-bold text-gold-deep">
