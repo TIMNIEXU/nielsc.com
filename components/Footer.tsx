@@ -17,11 +17,11 @@ export default async function Footer() {
   ];
 
   const groupBrands = [
-    { name: "Niel Supply Chain", href: "/", external: false },
-    { name: "Niel Customs", href: `https://www.nielcustoms.ai?${UTM}`, external: true },
-    { name: "JOMA Logistics", href: `https://www.jomaus.com?${UTM}`, external: true },
-    { name: "Niel Insurance", href: `https://nielinsurance.com?${UTM}`, external: true },
-    { name: "NIEL COS", href: `https://www.nielcos.ai?${UTM}`, external: true },
+    { name: "Niel Supply Chain", href: "/", external: false, logo: "/nielsc-logo.png" },
+    { name: "Niel Customs", href: `https://www.nielcustoms.ai?${UTM}`, external: true, logo: "/nielsc-logo.png" },
+    { name: "JOMA Logistics", href: `https://www.jomaus.com?${UTM}`, external: true, logo: "/logo-joma-logistics.png" },
+    { name: "Niel Insurance", href: `https://nielinsurance.com?${UTM}`, external: true, logo: "/logo-niel-insurance.png" },
+    { name: "NIEL COS", href: `https://www.nielcos.ai?${UTM}`, external: true, logo: "/nielsc-logo.png" },
   ];
 
   return (
@@ -32,29 +32,30 @@ export default async function Footer() {
           <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-gold">
             {t("groupEyebrow")}
           </p>
-          <div className="mt-4 flex flex-wrap items-center gap-x-7 gap-y-3">
-            {groupBrands.map((b) =>
-              b.external ? (
-                <a
-                  key={b.name}
-                  href={b.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[15px] font-bold text-white transition-colors hover:text-gold"
-                >
-                  {b.name}
-                  <ExternalIcon className="h-3.5 w-3.5 opacity-60" />
+          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-3">
+            {groupBrands.map((b) => {
+              const inner = (
+                <span className="flex h-11 items-center gap-2.5 rounded-lg bg-white px-3 transition-opacity hover:opacity-85">
+                  <img
+                    src={b.logo}
+                    alt={b.name}
+                    className="h-8 w-auto max-w-[84px] object-contain"
+                  />
+                  <span className="whitespace-nowrap text-[13px] font-bold text-abyss">
+                    {b.name}
+                  </span>
+                </span>
+              );
+              return b.external ? (
+                <a key={b.name} href={b.href} target="_blank" rel="noreferrer">
+                  {inner}
                 </a>
               ) : (
-                <Link
-                  key={b.name}
-                  href={b.href}
-                  className="text-[15px] font-bold text-white transition-colors hover:text-gold"
-                >
-                  {b.name}
+                <Link key={b.name} href={b.href}>
+                  {inner}
                 </Link>
-              )
-            )}
+              );
+            })}
           </div>
           <p className="mt-3 text-[12.5px] text-white/50">{t("groupNote")}</p>
         </div>
