@@ -36,7 +36,7 @@ export default async function HomePage({ params }: Props) {
     BoxIcon, GlobeIcon, CheckIcon, PinIcon, NetworkIcon,
   ];
   const needLinks: { href: string; external: boolean }[] = [
-    { href: `https://www.nielcustoms.ai?${UTM}`, external: true },
+    { href: `https://www.nielcustoms.com?${UTM}`, external: true },
     { href: `https://www.jomaus.com/${locale}/quote?${UTM}`, external: true },
     { href: "/services", external: false },
     { href: "/services", external: false },
@@ -57,7 +57,7 @@ export default async function HomePage({ params }: Props) {
   ];
   const brandLinks: { href: string; external: boolean }[] = [
     { href: "/", external: false },
-    { href: `https://www.nielcustoms.ai?${UTM}`, external: true },
+    { href: `https://www.nielcustoms.com?${UTM}`, external: true },
     { href: `https://www.jomaus.com/${locale}?${UTM}`, external: true },
     { href: `https://nielinsurance.com/${locale}?${UTM}`, external: true },
     { href: `https://www.nielcos.ai/${cosL}?${UTM}`, external: true },
