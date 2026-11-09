@@ -140,6 +140,28 @@ export default async function Footer() {
               </a>
             </li>
           </ul>
+          <div className="mt-5 flex gap-4">
+            <figure className="text-center">
+              <img
+                src="/whatsapp-qr.png"
+                alt="WhatsApp QR code"
+                className="h-24 w-24 rounded-lg bg-white object-contain"
+              />
+              <figcaption className="mt-2 text-[11.5px] leading-snug text-white/60">
+                {t("qrWhatsapp")}
+              </figcaption>
+            </figure>
+            <figure className="text-center">
+              <img
+                src="/wechat-qr.jpg"
+                alt="WeChat QR code"
+                className="h-24 w-24 rounded-lg bg-white object-contain"
+              />
+              <figcaption className="mt-2 text-[11.5px] leading-snug text-white/60">
+                {t("qrWechat")}
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </div>
 
