@@ -20,7 +20,7 @@ export default async function Footer() {
     { name: "NIEL Group", href: `https://www.nielgroup.com?${UTM}`, external: true, logo: "/nielsc-logo.png" },
     { name: "Niel Supply Chain", href: "/", external: false, logo: "/nielsc-logo.png" },
     { name: "Niel Customs", href: `https://www.nielcustoms.com?${UTM}`, external: true, logo: "/nielsc-logo.png" },
-    { name: "JOMA Corporate", href: `https://www.jomainc.com?${UTM}`, external: true, logo: "/logo-joma-logistics.png" },
+    { name: "JOMA Corporate", href: `https://www.jomainc.com?${UTM}`, external: true, logo: "/joma-logo.png" },
     { name: "JOMA Logistics", href: `https://www.jomaus.com?${UTM}`, external: true, logo: "/logo-joma-logistics.png" },
     { name: "Niel Insurance", href: `https://nielinsurance.com?${UTM}`, external: true, logo: "/logo-niel-insurance.png" },
     { name: "NIEL COS", href: `https://www.nielcos.ai?${UTM}`, external: true, logo: "/nielsc-logo.png" },
@@ -41,7 +41,7 @@ export default async function Footer() {
                   <img
                     src={b.logo}
                     alt={b.name}
-                    className="h-8 w-auto max-w-[84px] object-contain"
+                    className="h-8 w-auto max-w-[150px] object-contain"
                   />
                   <span className="whitespace-nowrap text-[13px] font-bold text-abyss">
                     {b.name}
